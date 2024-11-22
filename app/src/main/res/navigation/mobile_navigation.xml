@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_home">
+
+    <fragment
+        android:id="@+id/navigation_home"
+        android:name="com.example.hall9000.ui.home.HomeFragment"
+        android:label="@string/title_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_navigation_home_to_navigation_login"
+            app:destination="@id/navigation_login" />
+        <action
+            android:id="@+id/action_navigation_home_to_navigation_registrar"
+            app:destination="@id/navigation_registrar" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_login"
+        android:name="com.example.hall9000.ui.login.LoginFragment"
+        android:label="@string/title_login"
+        tools:layout="@layout/fragment_login" >
+        <argument
+            android:name="usuarioId"
+            app:argType="integer" />
+        <action
+            android:id="@+id/action_navigation_login_to_navigation_pedidos"
+            app:destination="@id/navigation_pedidos" />
+        <action
+            android:id="@+id/action_navigation_login_to_navigation_esqueceu"
+            app:destination="@id/navigation_esqueceu" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_registrar"
+        android:name="com.example.hall9000.ui.registrar.RegistrarFragment"
+        android:label="@string/title_registrar"
+        tools:layout="@layout/fragment_registrar" >
+        <action
+            android:id="@+id/action_navigation_registrar_to_navigation_login"
+            app:destination="@id/navigation_login" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_pedidos"
+        android:name="com.example.hall9000.ui.pedidos.PedidosFragment"
+        android:label="Aparelhos"
+        tools:layout="@layout/fragment_pedidos">
+        <argument
+            android:name="usuarioId"
+            app:argType="integer" />
+        <action
+            android:id="@+id/action_pedidosFragment_to_editAparelhoFragment"
+            app:destination="@id/editAparelhoFragment" />
+        <action
+            android:id="@+id/action_pedidosFragment_to_adicionarAparelhoFragment"
+            app:destination="@id/adicionarAparelhoFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_esqueceu"
+        android:name="com.example.hall9000.ui.forgotpassword.ForgotPasswordFragment"
+        android:label="esquecue a senha"
+        tools:layout="@layout/fragment_forgot_password" />
+
+    <fragment
+        android:id="@+id/navigation_usuarios"
+        android:name="com.example.hall9000.ui.usuarios.UserListFragment"
+        android:label="Usuarios"
+        tools:layout="@layout/fragment_user_list" />
+
+    <fragment
+        android:id="@+id/navigation_usuarios_edit"
+        android:name="com.example.hall9000.ui.usuarios.EditUserFragment"
+        android:label="Editar"
+        tools:layout="@layout/fragment_user_list" />
+
+    <fragment
+        android:id="@+id/editAparelhoFragment"
+        android:name="com.example.hall9000.ui.pedidos.EditAparelhoFragment"
+        android:label="Editar Aparelho"
+        tools:layout="@layout/fragment_edit_user">
+        <argument
+            android:name="aparelhoId"
+            app:argType="integer" />
+        <argument
+            android:name="aparelhoNome"
+            app:argType="string" />
+        <argument
+            android:name="aparelhoPotencia"
+            app:argType="float" />
+        <argument
+            android:name="frequenciaUso"
+            app:argType="string" />
+        <argument
+            android:name="hora"
+            app:argType="string" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/adicionarAparelhoFragment"
+        android:name="com.example.hall9000.ui.aparelhos.AdicionarAparelhoFragment"
+        android:label="Adicionar Aparelho"
+        tools:layout="@layout/fragment_adicionar_aparelho">
+        <argument
+            android:name="usuarioId"
+            app:argType="integer" />
+    </fragment>
+
+</navigation>
