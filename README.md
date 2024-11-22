@@ -2,6 +2,9 @@
 
 Hall9000 é um aplicativo móvel desenvolvido para ajudar os usuários a monitorarem o consumo de energia de seus eletrodomésticos e calcular o custo de energia de cada aparelho. O app permite cadastrar eletrodomésticos, inserir suas especificações (como potência, frequência de uso, e tempo de uso diário, semanal ou mensal), e exibe o consumo em kWh e o custo associado à energia consumida.
 
+## Link para o video:
+https://youtu.be/cGakxtmTSxI
+
 ## Funcionalidades
 
 - **Cadastro de Aparelhos**: O usuário pode adicionar eletrodomésticos ao aplicativo e informar a potência, frequência de uso, e tempo de uso diário, semanal ou mensal.
